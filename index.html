@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>चंद्रयान 3 मिशन | ISRO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f4d 100%);
+            color: #fff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '✨';
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.2;
+            animation: twinkle 3s infinite;
+            top: 10%;
+            left: 10%;
+        }
+        
+        header::after {
+            content: '🌟';
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.2;
+            animation: twinkle 4s infinite;
+            bottom: 15%;
+            right: 15%;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0.25rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            background: #ff6b35;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .section h2 {
+            color: #ff6b35;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.2) 0%, rgba(247, 147, 30, 0.2) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+        
+        .info-card h3 {
+            color: #f7931e;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #ff6b35;
+            margin-bottom: 2rem;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s;
+        }
+        
+        .timeline-item:hover {
+            background: rgba(255, 107, 53, 0.15);
+            transform: translateX(10px);
+            box-shadow: -5px 5px 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .timeline-item h3 {
+            color: #f7931e;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .achievement {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .achievement h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            border: none;
+        }
+        
+        footer {
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav a {
+                padding: 0.4rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 चंद्रयान 3 मिशन</h1>
+        <p>भारत की ऐतिहासिक चंद्र विजय</p>
+    </header>
+    
+    <nav>
+        <a href="#introduction">परिचय</a>
+        <a href="#details">विवरण</a>
+        <a href="#timeline">समयरेखा</a>
+        <a href="#achievements">उपलब्धियां</a>
+        <a href="#instruments">उपकरण</a>
+        <a href="#gallery">गैलरी</a>
+    </nav>
+    
+    <div class="container">
+        <div class="hero">
+            <h2>चंद्रमा के दक्षिणी ध्रुव पर भारत का परचम</h2>
+            <div style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); padding: 3rem; border-radius: 15px; margin: 2rem 0;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">🚀🌕</div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">चंद्रयान 3 मिशन</h3>
+                <p style="font-size: 1.1rem;">विक्रम लैंडर और प्रज्ञान रोवर</p>
+            </div>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">23 अगस्त 2023 को भारत विश्व का पहला देश बना जिसने चंद्रमा के दक्षिणी ध्रुव पर सफल लैंडिंग की</p>
+        </div>
+        
+        <!-- परिचय -->
+        <div id="introduction" class="section">
+            <h2>📋 मिशन परिचय</h2>
+            <div style="margin: 2rem 0;">
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">चंद्रयान 3 भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO) का तीसरा चंद्र अन्वेषण मिशन था। इस मिशन ने चंद्रयान 2 के बाद भारत की चंद्र महत्वाकांक्षाओं को पूरा किया और विश्व इतिहास में एक नया अध्याय लिखा।</p>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">यह मिशन चंद्रमा की सतह पर सुरक्षित लैंडिंग और रोविंग क्षमताओं का प्रदर्शन करने के लिए डिज़ाइन किया गया था।</p>
+                <p style="font-size: 1.1rem;">चंद्रमा का दक्षिणी ध्रुव विशेष रूप से महत्वपूर्ण है क्योंकि वैज्ञानिकों का मानना है कि वहां जल-बर्फ के रूप में मौजूद हो सकता है। यह क्षेत्र पहले कभी किसी अन्य देश द्वारा एक्सप्लोर नहीं किया गया था।</p>
+            </div>
+        </div>
+
+        <!-- विवरण -->
+        <div id="details" class="section">
+            <h2>🔍 मिशन विवरण</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📅 प्रक्षेपण तिथि</h3>
+                    <p>14 जुलाई 2023</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎯 लैंडिंग तिथि</h3>
+                    <p>23 अगस्त 2023, शाम 6:04 बजे IST</p>
+                </div>
+                <div class="info-card">
+                    <h3>📍 लैंडिंग स्थान</h3>
+                    <p>चंद्रमा का दक्षिणी ध्रुव<br>(69.37°S, 32.32°E)</p>
+                </div>
+                <div class="info-card">
+                    <h3>🚀 रॉकेट</h3>
+                    <p>LVM3 (GSLV Mark III)</p>
+                </div>
+                <div class="info-card">
+                    <h3>⚖️ कुल वजन</h3>
+                    <p>3,900 किलोग्राम</p>
+                </div>
+                <div class="info-card">
+                    <h3>💰 मिशन लागत</h3>
+                    <p>लगभग ₹615 करोड़</p>
+                </div>
+                <div class="info-card">
+                    <h3>🛸 लैंडर का नाम</h3>
+                    <p>विक्रम (डॉ. विक्रम साराभाई के सम्मान में)</p>
+                </div>
+                <div class="info-card">
+                    <h3>🤖 रोवर का नाम</h3>
+                    <p>प्रज्ञान (संस्कृत में 'ज्ञान')</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- समयरेखा -->
+        <div id="timeline" class="section">
+            <h2>⏱️ मिशन समयरेखा</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>📅 14 जुलाई 2023</h3>
+                    <p>श्रीहरिकोटा के सतीश धवन अंतरिक्ष केंद्र से LVM3 रॉकेट द्वारा सफल प्रक्षेपण। दोपहर 2:35 बजे IST पर लिफ्ट-ऑफ।</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🛰️ 15 जुलाई - 31 जुलाई 2023</h3>
+                    <p>पृथ्वी की कक्षा में कई मैन्यूवर करके धीरे-धीरे ऊंचाई बढ़ाना</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🌍 1 अगस्त 2023</h3>
+                    <p>ट्रांस-लूनर इंजेक्शन - चंद्रमा की ओर यात्रा शुरू</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🌙 5 अगस्त 2023</h3>
+                    <p>चंद्रमा की कक्षा में सफल प्रवेश (लूनर ऑर्बिट इंसर्शन)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🔄 6 अगस्त - 16 अगस्त 2023</h3>
+                    <p>चंद्र कक्षा में कई मैन्यूवर द्वारा धीरे-धीरे ऊंचाई कम करना</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>✂️ 17 अगस्त 2023</h3>
+                    <p>लैंडर (विक्रम) का प्रोपल्शन मॉड्यूल से अलग होना</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🎯 23 अगस्त 2023 - शाम 6:04 बजे IST</h3>
+                    <p><strong>ऐतिहासिक क्षण!</strong> चंद्रमा के दक्षिणी ध्रुव पर सफल सॉफ्ट लैंडिंग। भारत विश्व का चौथा देश बना जिसने चंद्रमा पर लैंडिंग की और पहला देश जिसने दक्षिणी ध्रुव पर लैंडिंग की।</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🚶 23 अगस्त 2023 - रात 11:00 बजे</h3>
+                    <p>प्रज्ञान रोवर का विक्रम लैंडर से बाहर निकलना और चंद्र सतह पर अपना पहला कदम रखना</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>🔬 24 अगस्त - 2 सितंबर 2023</h3>
+                    <p>वैज्ञानिक प्रयोग और चंद्र सतह का विस्तृत अध्ययन। रोवर ने 100 मीटर से अधिक दूरी तय की।</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>😴 4 सितंबर 2023</h3>
+                    <p>चंद्र रात्रि (लगभग 14 पृथ्वी दिनों की) के कारण लैंडर और रोवर स्लीप मोड में</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- उपलब्धियां -->
+        <div id="achievements" class="section">
+            <h2>🏆 प्रमुख उपलब्धियां</h2>
+            <div class="achievement">
+                <div style="font-size: 3rem; margin-bottom: 1rem;">🌍🥇</div>
+                <h2>विश्व रिकॉर्ड</h2>
+                <p style="font-size: 1.2rem;">भारत विश्व का पहला देश बना जिसने चंद्रमा के दक्षिणी ध्रुव पर सफल लैंडिंग की</p>
+            </div>
+            <div class="info-grid" style="margin-top: 2rem;">
+                <div class="info-card">
+                    <h3>🌍 चौथा देश</h3>
+                    <p>चंद्रमा पर सॉफ्ट लैंडिंग करने वाला विश्व का चौथा देश (USA, USSR/Russia, China के बाद)</p>
+                </div>
+                <div class="info-card">
+                    <h3>🧪 सल्फर की खोज</h3>
+                    <p>चंद्र मिट्टी (रेगोलिथ) में सल्फर की उपस्थिति की पहली बार पुष्टि</p>
+                </div>
+                <div class="info-card">
+                    <h3>🌡️ तापमान मापन</h3>
+                    <p>चंद्र सतह का पहला तापमान प्रोफाइल: सतह पर +60°C से 10 सेमी नीचे -10°C तक</p>
+                </div>
+                <div class="info-card">
+                    <h3>📊 भूकंप गतिविधि</h3>
+                    <p>चंद्रमा पर भूकंपीय गतिविधियों (मूनक्वेक) का पता लगाया</p>
+                </div>
+                <div class="info-card">
+                    <h3>💰 लागत प्रभावी</h3>
+                    <p>अन्य देशों की तुलना में बहुत कम बजट (₹615 करोड़) में सफल मिशन</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎯 सटीक लैंडिंग</h3>
+                    <p>500m × 500m के लक्षित क्षेत्र में पिनपॉइंट सटीकता के साथ लैंडिंग</p>
+                </div>
+                <div class="info-card">
+                    <h3>🔬 रासायनिक विश्लेषण</h3>
+                    <p>एल्युमिनियम, कैल्शियम, आयरन, टाइटेनियम, मैंगनीज़ और ऑक्सीजन की उपस्थिति की पुष्टि</p>
+                </div>
+                <div class="info-card">
+                    <h3>⚡ प्लाज्मा अध्ययन</h3>
+                    <p>चंद्रमा की सतह के पास प्लाज्मा वातावरण का पहला अध्ययन</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="instruments" class="section">
+            <h2>🔬 वैज्ञानिक उपकरण और पेलोड</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📡 विक्रम लैंडर पर</h3>
+                    <p><strong>ChaSTE (चास्ट):</strong> चंद्र सतह थर्मोफिजिकल प्रयोग - तापमान प्रोफाइल मापन<br><br>
+                    <strong>ILSA (इल्सा):</strong> इंस्ट्रूमेंट फॉर लूनर सीस्मिक एक्टिविटी - भूकंपीय गतिविधि मापन<br><br>
+                    <strong>LP (लैंगमुइर प्रोब):</strong> प्लाज्मा घनत्व और इलेक्ट्रॉन तापमान मापन<br><br>
+                    <strong>LRA:</strong> लेजर रेट्रोरिफ्लेक्टर एरे - NASA का पेलोड</p>
+                </div>
+                <div class="info-card">
+                    <h3>🤖 प्रज्ञान रोवर पर</h3>
+                    <p><strong>APXS:</strong> अल्फा पार्टिकल एक्स-रे स्पेक्ट्रोमीटर - तत्वों की पहचान<br><br>
+                    <strong>LIBS:</strong> लेजर इंड्यूस्ड ब्रेकडाउन स्पेक्ट्रोस्कोपी - रासायनिक संरचना का विश्लेषण और सल्फर की खोज</p>
+                </div>
+                <div class="info-card">
+                    <h3>🛰️ प्रोपल्शन मॉड्यूल पर</h3>
+                    <p><strong>SHAPE:</strong> स्पेक्ट्रो-पोलरिमेट्री ऑफ हैबिटेबल प्लैनेट अर्थ - पृथ्वी का अध्ययन एक एक्सोप्लैनेट की तरह</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="gallery" class="section">
+            <h2>📸 मिशन गैलरी</h2>
+            <div class="gallery">
+                <div class="gallery-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div style="font-size: 5rem;">🚀</div>
+                    <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">रॉकेट लॉन्च</p>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">LVM3-M4 वाहन</p>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div style="font-size: 5rem;">🌙</div>
+                    <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">चंद्रमा</p>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">दक्षिणी ध्रुव क्षेत्र</p>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div style="font-size: 5rem;">🖥️</div>
+                    <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">नियंत्रण कक्ष</p>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">ISRO बैंगलोर</p>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div style="font-size: 5rem;">🛰️</div>
+                    <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">विक्रम लैंडर</p>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">सॉफ्ट लैंडिंग</p>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div style="font-size: 5rem;">🤖</div>
+                    <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">प्रज्ञान रोवर</p>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">चंद्र सतह पर</p>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);">
+                    <div style="font-size: 5rem;">🇮🇳</div>
+                    <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">भारतीय गौरव</p>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">जय हिन्द!</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎓 मिशन का महत्व</h2>
+            <div style="font-size: 1.1rem; line-height: 1.8;">
+                <p style
